@@ -28,6 +28,24 @@ class Song
     def self.genres
         @@genres.uniq
     end
+
+    def self.genre_count
+        genre_hash = {}
+
+        @@genres.map do |genre|
+            if genre_hash.has_key? genre
+                genre_hash[genre] += 1
+            else
+                genre_hash[genre] = 1
+            end
+        end
+
+        genre_hash
+    end
+
+    def self.artist_count
+
+    end
     
 
 end
